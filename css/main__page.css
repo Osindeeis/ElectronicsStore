@@ -1,15 +1,54 @@
 img{
-    width: 130px;
+    width: 150px;
     height: 200px;
 }
 
+main .container{
+    margin-top: 50px;
+    display: grid;
+    grid-template-areas: 
+    'filters card';
+    grid-template-columns: 200px 0.8fr;
+    grid-column-gap: 50px;
+    
+}
+
+.filters{
+    grid-area: filters;
+    align-self: start;
+    border: 1px solid black;
+}
+
 .card__row{
-    display: flex;
+    grid-area: card;
 }
 
 .card{
-    /* margin: 30px; */
-    width: 200px;
-    height: 250px;
-    text-align: center;
+    display: grid;
+    border: 1px solid black;
+    grid-template-columns: 150px minmax(200px,4fr) minmax(50px,1fr) 1fr;
+    padding: 10px;
+    margin-top: 20px;
+    border-radius: 20px;
+    grid-column-gap: 10px;
+    justify-self: end;
+}
+
+.title{
+    align-self: center;
+    justify-self: center;
+    font-weight: 400;
+    font-size: 18px;
+}
+
+.cost{
+    align-self: center;
+    justify-self: end;
+}
+
+.btn{
+    width: 100px;
+    height: 50px;
+    justify-self: end;
+    align-self: center;
 }

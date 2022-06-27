@@ -18,15 +18,21 @@ include_once "./db/db.php";
     <?php include_once "nav__bar.php" ?>
     <main>
         <div class="container">
+            <div class="filters">
+                link
+                link
+                link
+            </div>
             <div class="card__row">
                 <?php
                 $query = "Select * From `products`";
                 $result = mysqli_query($db, $query);
                 while ($goods = mysqli_fetch_assoc($result)) {
                     echo '<div class="card">';
-                    echo '<h3>' . $goods['title'] . '</h3>';
                     echo '<img src="data:image/jpeg;base64,' . base64_encode($goods['img']) . '" />';
-                    echo '<h4>' . $goods['cost'] . '</h4>';
+                    echo '<h3 class="title">' . $goods['title'] . '</h3>';
+                    echo '<h4 class="cost">' . $goods['cost'] . ' Р</h4>';
+                    echo '<button class="btn">Купить</button>';
                     echo '</div>';
                 }
                 ?>
