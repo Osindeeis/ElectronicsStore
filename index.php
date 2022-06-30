@@ -19,9 +19,17 @@ include_once "./db/db.php";
     <main>
         <div class="container">
             <div class="filters">
-                link
-                link
-                link
+                <?php
+                    $queryCategory = "Select Category From `Category`";
+                    $resultCategory = mysqli_query($db, $queryCategory);
+                    while ($Category = mysqli_fetch_assoc($resultCategory)) {
+                        echo '<p>';
+                        echo '<input type="checkbox" name="a" value="'. $Category['Category'] .'" >' . $Category['Category'] . '</p>';
+
+                    }
+                    
+
+                ?>
             </div>
             <div class="card__row">
                 <?php
@@ -30,7 +38,7 @@ include_once "./db/db.php";
                 while ($goods = mysqli_fetch_assoc($result)) {
                     echo '<div class="card">';
                     echo '<img src="data:image/jpeg;base64,' . base64_encode($goods['img']) . '" />';
-                    echo '<h3 class="title">' . $goods['title'] . '</h3>';
+                    echo '<h3 class="title">' . $goods['Title'] . '</h3>';
                     echo '<h4 class="cost">' . $goods['cost'] . ' Р</h4>';
                     echo '<button class="btn">Купить</button>';
                     echo '</div>';
