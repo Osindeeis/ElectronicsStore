@@ -20,34 +20,33 @@ include_once "./db/db.php";
         <div class="container">
             <div class="filters">
                 <?php
-                    $queryCategory = "Select Category From `Category`";
+                    $queryCategory = "Select * From `Category`";
                     $resultCategory = mysqli_query($db, $queryCategory);
                     while ($Category = mysqli_fetch_assoc($resultCategory)) {
                         echo '<p>';
-                        echo '<input type="checkbox" name="a" value="'. $Category['Category'] .'" >' . $Category['Category'] . '</p>';
-
+                        echo '<button  class="'. $Category['Category'] .'" name="a" >' . $Category['Fullname'] . '</button>';
                     }
-                    
-
                 ?>
             </div>
             <div class="card__row">
                 <?php
-                $query = "Select * From `products`";
-                $result = mysqli_query($db, $query);
-                while ($goods = mysqli_fetch_assoc($result)) {
-                    echo '<div class="card">';
-                    echo '<img src="data:image/jpeg;base64,' . base64_encode($goods['img']) . '" />';
-                    echo '<h3 class="title">' . $goods['Title'] . '</h3>';
-                    echo '<h4 class="cost">' . $goods['cost'] . ' Р</h4>';
+                $query2 = "SELECT * FROM products INNER JOIN Category On products.Category = Category.id_category";
+                $result2 = mysqli_query($db, $query2);
+                while ($goods2 = mysqli_fetch_assoc($result2)) {
+                    echo '<div class="card '. $goods2['Category'] .'">';
+                    echo '<img src="data:image/jpeg;base64,' . base64_encode($goods2['img']) . '" />';
+                    echo '<h3 class="title">' . $goods2['Title'] . '</h3>';
+                    echo '<h4 class="cost">' . $goods2['cost'] . ' Р</h4>';
                     echo '<button class="btn">Купить</button>';
                     echo '</div>';
                 }
+
                 ?>
             </div>
         </div>
 
     </main>
+    <script src="./js/script.js"></script>
 </body>
 
 </html>
