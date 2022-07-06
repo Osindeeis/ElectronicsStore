@@ -58,3 +58,7 @@ main .container{
     justify-self: end;
     align-self: center;
 }
+
+.hide{
+    display: none;
+}

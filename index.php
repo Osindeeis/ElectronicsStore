@@ -19,12 +19,12 @@ include_once "./db/db.php";
     <main>
         <div class="container">
             <div class="filters">
+            <button class="btn__category" data-filter="all" name="a" >Все категории</button>
                 <?php
                     $queryCategory = "Select * From `Category`";
                     $resultCategory = mysqli_query($db, $queryCategory);
                     while ($Category = mysqli_fetch_assoc($resultCategory)) {
-                        echo '<p>';
-                        echo '<button  class="'. $Category['Category'] .'" name="a" >' . $Category['Fullname'] . '</button>';
+                        echo '<button class="btn__category" data-filter="'. $Category['Category'] .'" name="a" >' . $Category['Fullname'] . '</button>';
                     }
                 ?>
             </div>
