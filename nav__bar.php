@@ -2,7 +2,7 @@
     <div class="container">
         <div class="nav__row">
             <div class="nav__logo">
-                <a><img src="./img/Logo.png" alt="Logo"></a>
+                <a><Span>Electro</Span></a>
             </div>
             <div class="nav__links">
                 <ul>

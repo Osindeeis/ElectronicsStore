@@ -19,15 +19,18 @@ a{
     text-decoration: none;
     color: black;
     cursor: pointer;
+    color: white;
 }
 
 button{
     cursor: pointer;
+    border: none;
 }
 
 nav{
     background-color: rgba(0, 0, 0, .5);
     height: 50px;
+    
 }
 
 .container{
@@ -42,9 +45,9 @@ nav{
     padding: 10px 15px;
 }
 
-nav img{
-    width: 100px;
-    height: 30px;
+nav span{
+    color: orange;
+    font-size: 26px;
 }
 
 nav li{

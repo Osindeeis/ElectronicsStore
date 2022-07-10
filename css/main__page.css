@@ -15,15 +15,31 @@ main .container{
 
 .filters{
     grid-area: filters;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
     align-self: start;
-    border: 1px solid black;
+    margin-top: 20px;
+}
+
+.filters button{
+    width: 160px;
+    height: 40px;
+    text-align: center;
+    margin: auto;
+    font-size: 18px;
+    transition: all 0.3s ease-in-out;
+}
+
+.filters button:focus{
+    background-color: orange;
+    color: white;
+    transform: scale(1.1);
 }
 
 .card__row{
     grid-area: card;
 }
-
-
 
 .card{
     display: grid;
@@ -51,7 +67,6 @@ main .container{
     width: 100px;
     height: 50px;
     border-radius: 30px;
-    border: none;
     background-color: orange;
     font-size: 18px;
     color: white;
